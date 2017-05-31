@@ -13,7 +13,7 @@ import io.github.kafumi.jsonconvertersample.data.ValuePack
 import io.github.kafumi.jsonconvertersample.net.NetworkServices
 import retrofit2.Response
 
-fun endpointType(viewId: Int): String = when(viewId) {
+fun endpointType(viewId: Int): String = when (viewId) {
     R.id.fetch_valid -> "valid"
     R.id.fetch_null_values -> "null-values"
     R.id.fetch_missing_properties -> "missing-properties"
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         val value = response.body()
 
         if (response.isSuccessful && value != null) {
-            fetchResult.text = value.toString()
+            fetchResult.text = "$value --> ${if (value.isValid) "valid" else "invalid"}"
         } else {
             fetchResult.text = "FAIL: ${response.code()}: ${response.message()}"
         }
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         val value = response.body()
 
         if (response.isSuccessful && value != null) {
-            fetchResult.text = value.toString()
+            fetchResult.text = "$value --> ${if (value.isValid) "valid" else "invalid"}"
         } else {
             fetchResult.text = "FAIL: ${response.code()}: ${response.message()}"
         }
