@@ -3,7 +3,7 @@ package io.github.kafumi.jsonconvertersample.net
 import io.github.kafumi.jsonconvertersample.net.mock.NetworkMockInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 object NetworkServices {
     private val retrofit: Retrofit by lazy {
@@ -14,7 +14,7 @@ object NetworkServices {
         Retrofit.Builder()
                 .client(client)
                 .baseUrl("http://example.com/")
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(MoshiConverterFactory.create())
                 .build()
     }
 

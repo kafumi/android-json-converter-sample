@@ -1,10 +1,10 @@
 package io.github.kafumi.jsonconvertersample.data
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class NullableValuePack(
-        @SerializedName("int") val intValue: Int?,
-        @SerializedName("long") val longValue: Long?,
-        @SerializedName("float") val floatValue: Float?,
-        @SerializedName("double") val doubleValue: Double?,
-        @SerializedName("string") val stringValue: String?)
+        @field:Json(name = "int") val intValue: Int?,
+        @field:Json(name = "long") val longValue: Long?,
+        @field:Json(name = "float") val floatValue: Float?,
+        @field:Json(name = "double") val doubleValue: Double?,
+        @field:Json(name = "string") val stringValue: String?)

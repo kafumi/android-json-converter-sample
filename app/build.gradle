@@ -36,10 +36,10 @@ dependencies {
 
     // Retrofit
     compile "com.squareup.retrofit2:retrofit:$retrofit_version"
-    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
-    // Gson
-    compile 'com.google.code.gson:gson:2.8.1'
+    // Moshi
+    compile 'com.squareup.moshi:moshi:1.5.0'
 }
 
 repositories {
