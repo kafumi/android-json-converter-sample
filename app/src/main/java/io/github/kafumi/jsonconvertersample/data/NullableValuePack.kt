@@ -7,4 +7,8 @@ data class NullableValuePack(
         @SerializedName("long") val longValue: Long?,
         @SerializedName("float") val floatValue: Float?,
         @SerializedName("double") val doubleValue: Double?,
-        @SerializedName("string") val stringValue: String?)
+        @SerializedName("string") val stringValue: String?): Validatable {
+
+    override val isValid: Boolean
+        get() = notNull(intValue, longValue, floatValue, doubleValue, stringValue)
+}
