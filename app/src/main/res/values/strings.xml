@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">JsonConverterSample</string>
+
+    <string name="nullable_property">Nullable property</string>
+    <string name="fetch_valid">Fetch (valid)</string>
+    <string name="fetch_null_values">Fetch (null values)</string>
+    <string name="fetch_missing_properties">Fetch (missing props)</string>
+    <string name="fetch_invalid_type_strings">Fetch (invalid type strings)</string>
+    <string name="fetch_invalid_type_numbers">Fetch (invalid type numbers)</string>
 </resources>
