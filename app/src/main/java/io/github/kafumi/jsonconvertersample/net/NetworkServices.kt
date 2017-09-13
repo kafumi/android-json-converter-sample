@@ -1,5 +1,7 @@
 package io.github.kafumi.jsonconvertersample.net
 
+import com.squareup.moshi.KotlinJsonAdapterFactory
+import com.squareup.moshi.Moshi
 import io.github.kafumi.jsonconvertersample.net.mock.NetworkMockInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -11,10 +13,14 @@ object NetworkServices {
                 .addInterceptor(NetworkMockInterceptor())
                 .build()
 
+        val moshi = Moshi.Builder()
+                .add(KotlinJsonAdapterFactory())
+                .build()
+
         Retrofit.Builder()
                 .client(client)
                 .baseUrl("http://example.com/")
-                .addConverterFactory(MoshiConverterFactory.create())
+                .addConverterFactory(MoshiConverterFactory.create(moshi))
                 .build()
     }
 
